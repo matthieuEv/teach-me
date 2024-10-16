@@ -2,6 +2,10 @@ from prompt import generate_educational_content
 from text2speech import generate_audio
 from text2image import generate_picture
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 def delete_all_files_in_data_directory():
     data_dir = os.path.join(os.getcwd(), 'data')
@@ -22,11 +26,11 @@ if __name__ == "__main__":
     prompt = input("Teach me about ")
     # prompt = "the solar system"
     jsonOut = generate_educational_content(prompt)
-    print(jsonOut["json"]["script"]["introduction_paragraph"])
+    generate_audio(jsonOut["json"]["script"]["introduction_paragraph"],0)
     for chapter_index, chapter in enumerate(jsonOut["json"]["script"]["chapters"]):
-        
-        generate_audio(chapter["content"],chapter_index)
+        print("\n"+str(chapter_index)+" - "+chapter["content"]+"\n")
+        generate_audio(chapter["content"],chapter_index+1)
 
         for images_index, images_prompt in enumerate(chapter["images"]):
             print("\n"+images_prompt+"\n")
-            generate_picture(images_prompt,str(chapter_index)+"_"+str(images_index)+".jpg")
+            generate_picture(images_prompt,str(chapter_index+1)+"_"+str(images_index)+".jpg")

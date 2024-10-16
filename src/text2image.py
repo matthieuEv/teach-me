@@ -10,7 +10,7 @@ def generate_picture(prompt, index):
     invoke_url = "https://ai.api.nvidia.com/v1/genai/briaai/bria-2.3"
 
     headers = {
-        "Authorization": f'Bearer {os.getenv("OPENAI_API_KEY")}',
+        "Authorization": f'Bearer {os.getenv("NVIDIA_API_KEY")}',
         "Accept": "application/json",
     }
 

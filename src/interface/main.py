@@ -10,6 +10,7 @@ def click_submit(prompt):
         submit_button.bind("<Enter>", lambda e: submit_button.config(cursor="watch"))
         submit_button.bind("<Leave>", lambda e: submit_button.config(cursor="arrow"))
         textarea.config(state=tk.DISABLED)
+        title_label.config(text="Processing...", fg=color_white)
 
 spacing = 25
 color_white = '#D9D9D9'
@@ -41,6 +42,5 @@ textarea.pack(pady=(0, 10))
 # Submit Button with cursor change
 submit_button = ttk.Button(main_frame, text="Submit", command=lambda: click_submit(textarea.get('1.0', tk.END).strip()))
 submit_button.pack(pady=(0, 10))
-
 
 root.mainloop()

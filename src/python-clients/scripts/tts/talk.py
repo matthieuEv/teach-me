@@ -149,7 +149,7 @@ def main() -> None:
             resp = service.synthesize(
                 args.text, args.voice, args.language_code, sample_rate_hz=args.sample_rate_hz,
                 audio_prompt_file=args.audio_prompt_file, quality=20 if args.quality is None else args.quality,
-                custom_dictionary=custom_dictionary_input
+                
             )
             stop = time.time()
             print(f"Time spent: {(stop - start):.3f}s")
@@ -158,7 +158,7 @@ def main() -> None:
             if out_f is not None:
                 out_f.writeframesraw(resp.audio)
     except Exception as e:
-        print(e.details())
+        print(e)
     finally:
         if out_f is not None:
             out_f.close()

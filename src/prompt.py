@@ -5,12 +5,15 @@ import time
 import json
 
 # Charger les variables d'environnement
-load_dotenv()
 
 def generate_educational_content(subject):
+    load_dotenv()
     nbr_errors = 0
 
+    print("Using model: ", os.getenv("LLAMA_MODEL"))
+
     while nbr_errors < 3:
+        print("Nb errors: ", nbr_errors)
         nbr_errors += 1
         start_time = time.time()
         # Prompt initial basé sur le modèle de ton README, avec le sujet inséré
@@ -49,26 +52,20 @@ def generate_educational_content(subject):
         you will response with the json, and only the json
         """
 
-        
         # Initialisation du client OpenAI
         client = OpenAI(
-            base_url="https://integrate.api.nvidia.com/v1",
-            api_key=os.getenv("OPENAI_API_KEY")
+            base_url = "https://integrate.api.nvidia.com/v1",
+            api_key = os.getenv("NVIDIA_API_KEY")
         )
-        print("client initialized ", client)
 
-        print("Generating educational content...")
-        # Création de la requête avec le prompt modifié
         response = client.chat.completions.create(
-            model="meta/llama-3.1-70b-instruct",
-            messages=[{"role": "user", "content": initial_prompt}],
+            model=os.getenv("LLAMA_MODEL"),
+            messages=[{"role":"user","content":initial_prompt}],
             temperature=0.2,
             top_p=0.7,
             max_tokens=1024,
             stream=False
         )
-
-        print("Educational content generated!")
 
         # Récupération et affichage du résultat
         result = response.choices[0].message.content
