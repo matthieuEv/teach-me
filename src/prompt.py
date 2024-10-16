@@ -17,11 +17,14 @@ def generate_educational_content(subject):
         initial_prompt = f"""
         You are a teacher. Teach me about {subject}. You will make separated chapters, and return a response like this json. There is a max of 3 chapters. In the end, you will have to make a QCM based on the class you gave using the json format i gave you. There is a max of 5 questions.
 
+        the introduction paragraph is the first paragraph of your course, it has to be very general, and very attractive, so the student will want to learn more about the subject, but also small, so the student will not be bored.
+
         ## Script Json Format
 
         {{
         "script": {{
         "title_course": str,
+        "introduction_paragraph": str,
         "chapters": [
         {{
         "title_chapter": str,
@@ -88,6 +91,7 @@ def verify_json_output(output):
     expected_structure = {
         "script": {
             "title_course": str,
+            "introduction_paragraph": str,
             "chapters": [
                 {
                     "title_chapter": str,

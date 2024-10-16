@@ -22,7 +22,7 @@ if __name__ == "__main__":
     prompt = input("Teach me about ")
     # prompt = "the solar system"
     jsonOut = generate_educational_content(prompt)
-    print(jsonOut["json"])
+    print(jsonOut["json"]["script"]["introduction_paragraph"])
     for chapter_index, chapter in enumerate(jsonOut["json"]["script"]["chapters"]):
         
         generate_audio(chapter["content"],chapter_index)

@@ -1,58 +1,90 @@
 {
-  "script": {
-    "title_course": "Exploring the Solar System",
-    "chapters": [
-      {
-        "title_chapter": "Chapter 1: Introduction to the Solar System",
-        "content": "The Solar System is a vast and fascinating place, comprising eight planets, dwarf planets, asteroids, comets, and other smaller bodies. At the center of our Solar System is the Sun, a massive ball of hot, glowing gas that provides light and heat to the planets. The four inner planets - Mercury, Venus, Earth, and Mars - are rocky and relatively small, while the four outer planets - Jupiter, Saturn, Uranus, and Neptune - are gas giants, composed mostly of hydrogen and helium.",
-        "images": [
-          "Draw a realistic illustration of the Sun at the center of the Solar System, with the eight planets in their relative positions, using a mix of warm and cool colors to represent the different temperatures and atmospheres of each planet.",
-          "Create a detailed drawing of the four inner planets, showcasing their unique features, such as Mercury's heavily cratered surface, Venus's thick atmosphere, Earth's blue oceans, and Mars's rusty red landscape."
+    "script": {
+        "title_course": "Exploring the Solar System",
+        "introduction_paragraph": "Welcome to our journey through the solar system! The solar system is a vast and fascinating place, comprising eight planets, dwarf planets, asteroids, comets, and other smaller bodies. In this course, we will explore the wonders of our cosmic neighborhood, from the scorching hot surface of the Sun to the icy cold temperatures of Neptune.",
+        "chapters": [
+            {
+                "title_chapter": "Chapter 1: The Sun and the Inner Planets",
+                "content": "The Sun is the center of our solar system, a massive ball of hot, glowing gas that provides light and heat to the planets. The four inner planets, Mercury, Venus, Earth, and Mars, are rocky worlds with diverse environments. Mercury is the smallest planet, with a highly eccentric orbit that takes it extremely close to the Sun. Venus is shrouded in thick clouds of sulfuric acid and droplets of sulfuric acid, while Earth is home to a diverse range of life forms. Mars, with its reddish hue, is a potential candidate for supporting life.",
+                "images": [
+                    "Draw a massive ball of hot, glowing gas with flames erupting from its surface, surrounded by four small rocky planets with different textures and colors.",
+                    "Depict Mercury as a small, cratered planet with a highly eccentric orbit, with the Sun looming large in the background.",
+                    "Illustrate Venus as a planet shrouded in thick clouds of sulfuric acid and droplets of sulfuric acid, with a surface hidden from view.",
+                    "Show Earth as a vibrant blue planet teeming with life, with oceans, continents, and clouds visible from space.",
+                    "Portray Mars as a reddish planet with a barren, rocky surface and a thin atmosphere, with the Curiosity rover exploring the terrain."
+                ]
+            },
+            {
+                "title_chapter": "Chapter 2: The Outer Planets",
+                "content": "The four outer planets, Jupiter, Saturn, Uranus, and Neptune, are gas giants that dominate the solar system in terms of size and mass. Jupiter is the largest planet, with a massive storm system known as the Great Red Spot. Saturn is famous for its stunning ring system, composed of ice and rock particles. Uranus and Neptune are icy worlds with extremely cold temperatures and strong winds.",
+                "images": [
+                    "Draw a massive gas giant planet with a giant storm system, surrounded by a system of moons and a faint ring system.",
+                    "Illustrate Saturn as a planet with a stunning ring system, composed of ice and rock particles, with the moons Titan and Enceladus visible in the background.",
+                    "Depict Uranus as an icy planet with a tilted axis, resulting in extreme seasons, with a thin atmosphere and a system of rings and moons.",
+                    "Show Neptune as a cold and icy planet with strong winds, surrounded by a system of moons and a faint ring system."
+                ]
+            },
+            {
+                "title_chapter": "Chapter 3: Dwarf Planets and Other Small Bodies",
+                "content": "In addition to the eight planets, the solar system is home to dwarf planets, asteroids, comets, and other small bodies. Pluto, once considered the ninth planet, is now classified as a dwarf planet. Asteroids are small rocky objects that orbit the Sun, while comets are icy bodies that release gas and dust as they approach the Sun.",
+                "images": [
+                    "Illustrate Pluto as a small, icy dwarf planet with a highly eccentric orbit, surrounded by a system of moons.",
+                    "Depict an asteroid as a small, rocky object with a highly elliptical orbit, with the Sun visible in the background.",
+                    "Show a comet as an icy body with a bright tail of gas and dust, as it approaches the Sun."
+                ]
+            }
         ]
-      },
-      {
-        "title_chapter": "Chapter 2: The Inner Planets",
-        "content": "The inner planets are rocky and relatively small, with solid surfaces and thin atmospheres. Mercury is the smallest planet, with a highly eccentric orbit that takes it extremely close to the Sun. Venus is often called Earth's twin due to its similar size and mass, but its thick atmosphere traps heat, making it the hottest planet. Earth is the only known planet to support life, with a diverse range of ecosystems and a perfect distance from the Sun. Mars is a potential candidate for supporting life, with evidence of ancient rivers and lakes.",
-        "images": [
-          "Draw a realistic illustration of Mercury's surface, showcasing its heavily cratered terrain, with the Sun looming large in the sky, casting long shadows across the planet's surface.",
-          "Create a detailed drawing of Venus's atmosphere, depicting its thick clouds of sulfuric acid and droplets of sulfuric acid, with a bright, glowing Sun shining through the haze."
-        ]
-      },
-      {
-        "title_chapter": "Chapter 3: The Outer Planets",
-        "content": "The outer planets are gas giants, composed mostly of hydrogen and helium. Jupiter is the largest planet, with a massive storm system known as the Great Red Spot. Saturn is known for its stunning ring system, made up of ice and rock particles. Uranus and Neptune are often referred to as the ice giants, due to their high concentrations of water, ammonia, and methane ices.",
-        "images": [
-          "Draw a realistic illustration of Jupiter's Great Red Spot, showcasing its swirling storm clouds, with lightning illuminating the dark clouds, and the planet's moons visible in the distance.",
-          "Create a detailed drawing of Saturn's ring system, depicting the intricate patterns and textures of the ice and rock particles, with the planet's moons and the Sun visible in the background."
-        ]
-      }
+    },
+    "qcm": [
+        {
+            "question": "What is the largest planet in our solar system?",
+            "list_answers": [
+                "Earth",
+                "Saturn",
+                "Jupiter",
+                "Uranus"
+            ],
+            "index_good_answer": 2
+        },
+        {
+            "question": "Which planet is known for its stunning ring system?",
+            "list_answers": [
+                "Jupiter",
+                "Saturn",
+                "Uranus",
+                "Neptune"
+            ],
+            "index_good_answer": 1
+        },
+        {
+            "question": "What is the smallest planet in our solar system?",
+            "list_answers": [
+                "Mercury",
+                "Mars",
+                "Venus",
+                "Earth"
+            ],
+            "index_good_answer": 0
+        },
+        {
+            "question": "Which dwarf planet was once considered the ninth planet?",
+            "list_answers": [
+                "Pluto",
+                "Eris",
+                "Ceres",
+                "Haumea"
+            ],
+            "index_good_answer": 0
+        },
+        {
+            "question": "What is the farthest planet from the Sun?",
+            "list_answers": [
+                "Neptune",
+                "Uranus",
+                "Saturn",
+                "Jupiter"
+            ],
+            "index_good_answer": 0
+        }
     ]
-  },
-  "qcm": [
-    {
-      "question": "What is the largest planet in our Solar System?",
-      "list_answers": ["Earth", "Saturn", "Jupiter", "Uranus"],
-      "index_good_answer": 2
-    },
-    {
-      "question": "Which planet is known for its thick atmosphere that traps heat?",
-      "list_answers": ["Venus", "Mars", "Mercury", "Earth"],
-      "index_good_answer": 0
-    },
-    {
-      "question": "What is the farthest planet from the Sun?",
-      "list_answers": ["Neptune", "Uranus", "Saturn", "Jupiter"],
-      "index_good_answer": 0
-    },
-    {
-      "question": "Which planet is the only known planet to support life?",
-      "list_answers": ["Earth", "Mars", "Venus", "Mercury"],
-      "index_good_answer": 0
-    },
-    {
-      "question": "What is the smallest planet in our Solar System?",
-      "list_answers": ["Mercury", "Mars", "Venus", "Earth"],
-      "index_good_answer": 0
-    }
-  ]
 }
