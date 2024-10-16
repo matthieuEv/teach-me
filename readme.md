@@ -1,5 +1,7 @@
 # Teach Me
 
+Running on `python@3.12.7`
+
 ```
 (Prompt) -> Script -> text-to-speetch -> audio-to-face
                    -> text-to-image
