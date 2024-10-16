@@ -1,71 +1,58 @@
 {
-    "script": {
-        "title_course": "Exploring the Solar System", 
-        "chapters": [
-            {
-                "title_chapter": "Chapter 1: Introduction to the Solar System", 
-                "content": "The Solar System is a collection of celestial objects that orbit around the Sun. It consists of eight planets, five dwarf planets, over 190 known moons, and a variety of smaller objects like asteroids and comets. The Solar System formed around 4.6 billion years ago from a giant cloud of gas and dust called the solar nebula. [[a picture of the Solar System]]"
-            }, 
-            {
-                "title_chapter": "Chapter 2: The Inner Planets", 
-                "content": "The four inner planets are Mercury, Venus, Earth, and Mars. These planets are rocky and relatively small, with Mercury being the smallest planet in our Solar System. Earth is the only known planet to support life. [[a picture of the Earth from space]] The inner planets are also known for their proximity to the Sun, with Mercury being the closest and Mars being the farthest."
-            }, 
-            {
-                "title_chapter": "Chapter 3: The Outer Planets", 
-                "content": "The four outer planets are Jupiter, Saturn, Uranus, and Neptune. These planets are gas giants, meaning they are primarily composed of hydrogen and helium gases. Jupiter is the largest planet in our Solar System, with a massive storm known as the Great Red Spot. [[a picture of Jupiter's Great Red Spot]] The outer planets are also known for their numerous moons, with Jupiter having a whopping 79 known moons."
-            }
+  "script": {
+    "title_course": "Exploring the Solar System",
+    "chapters": [
+      {
+        "title_chapter": "Chapter 1: Introduction to the Solar System",
+        "content": "The Solar System is a vast and fascinating place, comprising eight planets, dwarf planets, asteroids, comets, and other smaller bodies. At the center of our Solar System is the Sun, a massive ball of hot, glowing gas that provides light and heat to the planets. The four inner planets - Mercury, Venus, Earth, and Mars - are rocky and relatively small, while the four outer planets - Jupiter, Saturn, Uranus, and Neptune - are gas giants, composed mostly of hydrogen and helium.",
+        "images": [
+          "Draw a realistic illustration of the Sun at the center of the Solar System, with the eight planets in their relative positions, using a mix of warm and cool colors to represent the different temperatures and atmospheres of each planet.",
+          "Create a detailed drawing of the four inner planets, showcasing their unique features, such as Mercury's heavily cratered surface, Venus's thick atmosphere, Earth's blue oceans, and Mars's rusty red landscape."
         ]
-    }, 
-    "qcm": [
-        {
-            "question": "What is the largest planet in our Solar System?", 
-            "list_answers": [
-                "Earth", 
-                "Saturn", 
-                "Jupiter", 
-                "Uranus"
-            ], 
-            "index_good_answer": 2
-        }, 
-        {
-            "question": "Which planet is closest to the Sun?", 
-            "list_answers": [
-                "Mercury",
-                "Venus",
-                "Earth", 
-                "Mars"
-            ], 
-            "index_good_answer": 0
-        }, 
-        {
-            "question": "What is the farthest inner planet from the Sun?", 
-            "list_answers": [
-                "Mercury", 
-                "Venus", 
-                "Earth", 
-                "Mars"
-            ], 
-            "index_good_answer": 3
-        }, 
-        {
-            "question": "How many known moons does Jupiter have?", 
-            "list_answers": [
-                "50", 
-                "60", 
-                "70", 
-                "79"
-            ], 
-            "index_good_answer": 3
-        }, 
-        {
-            "question": "What is the name of the giant storm on Jupiter?", 
-            "list_answers": [
-                "The Great Red Spot", 
-                "The Great Blue Spot", 
-                "The Great Storm", 
-                "The Eye of Jupiter"
-            ], 
-            "index_good_answer": 0
-        }
+      },
+      {
+        "title_chapter": "Chapter 2: The Inner Planets",
+        "content": "The inner planets are rocky and relatively small, with solid surfaces and thin atmospheres. Mercury is the smallest planet, with a highly eccentric orbit that takes it extremely close to the Sun. Venus is often called Earth's twin due to its similar size and mass, but its thick atmosphere traps heat, making it the hottest planet. Earth is the only known planet to support life, with a diverse range of ecosystems and a perfect distance from the Sun. Mars is a potential candidate for supporting life, with evidence of ancient rivers and lakes.",
+        "images": [
+          "Draw a realistic illustration of Mercury's surface, showcasing its heavily cratered terrain, with the Sun looming large in the sky, casting long shadows across the planet's surface.",
+          "Create a detailed drawing of Venus's atmosphere, depicting its thick clouds of sulfuric acid and droplets of sulfuric acid, with a bright, glowing Sun shining through the haze."
+        ]
+      },
+      {
+        "title_chapter": "Chapter 3: The Outer Planets",
+        "content": "The outer planets are gas giants, composed mostly of hydrogen and helium. Jupiter is the largest planet, with a massive storm system known as the Great Red Spot. Saturn is known for its stunning ring system, made up of ice and rock particles. Uranus and Neptune are often referred to as the ice giants, due to their high concentrations of water, ammonia, and methane ices.",
+        "images": [
+          "Draw a realistic illustration of Jupiter's Great Red Spot, showcasing its swirling storm clouds, with lightning illuminating the dark clouds, and the planet's moons visible in the distance.",
+          "Create a detailed drawing of Saturn's ring system, depicting the intricate patterns and textures of the ice and rock particles, with the planet's moons and the Sun visible in the background."
+        ]
+      }
     ]
+  },
+  "qcm": [
+    {
+      "question": "What is the largest planet in our Solar System?",
+      "list_answers": ["Earth", "Saturn", "Jupiter", "Uranus"],
+      "index_good_answer": 2
+    },
+    {
+      "question": "Which planet is known for its thick atmosphere that traps heat?",
+      "list_answers": ["Venus", "Mars", "Mercury", "Earth"],
+      "index_good_answer": 0
+    },
+    {
+      "question": "What is the farthest planet from the Sun?",
+      "list_answers": ["Neptune", "Uranus", "Saturn", "Jupiter"],
+      "index_good_answer": 0
+    },
+    {
+      "question": "Which planet is the only known planet to support life?",
+      "list_answers": ["Earth", "Mars", "Venus", "Mercury"],
+      "index_good_answer": 0
+    },
+    {
+      "question": "What is the smallest planet in our Solar System?",
+      "list_answers": ["Mercury", "Mars", "Venus", "Earth"],
+      "index_good_answer": 0
+    }
+  ]
 }
