@@ -1,0 +1,71 @@
+{
+    "script": {
+        "title_course": "Exploring the Solar System", 
+        "chapters": [
+            {
+                "title_chapter": "Chapter 1: Introduction to the Solar System", 
+                "content": "The Solar System is a collection of celestial objects that orbit around the Sun. It consists of eight planets, five dwarf planets, over 190 known moons, and a variety of smaller objects like asteroids and comets. The Solar System formed around 4.6 billion years ago from a giant cloud of gas and dust called the solar nebula. [[a picture of the Solar System]]"
+            }, 
+            {
+                "title_chapter": "Chapter 2: The Inner Planets", 
+                "content": "The four inner planets are Mercury, Venus, Earth, and Mars. These planets are rocky and relatively small, with Mercury being the smallest planet in our Solar System. Earth is the only known planet to support life. [[a picture of the Earth from space]] The inner planets are also known for their proximity to the Sun, with Mercury being the closest and Mars being the farthest."
+            }, 
+            {
+                "title_chapter": "Chapter 3: The Outer Planets", 
+                "content": "The four outer planets are Jupiter, Saturn, Uranus, and Neptune. These planets are gas giants, meaning they are primarily composed of hydrogen and helium gases. Jupiter is the largest planet in our Solar System, with a massive storm known as the Great Red Spot. [[a picture of Jupiter's Great Red Spot]] The outer planets are also known for their numerous moons, with Jupiter having a whopping 79 known moons."
+            }
+        ]
+    }, 
+    "qcm": [
+        {
+            "question": "What is the largest planet in our Solar System?", 
+            "list_answers": [
+                "Earth", 
+                "Saturn", 
+                "Jupiter", 
+                "Uranus"
+            ], 
+            "index_good_answer": 2
+        }, 
+        {
+            "question": "Which planet is closest to the Sun?", 
+            "list_answers": [
+                "Mercury",
+                "Venus",
+                "Earth", 
+                "Mars"
+            ], 
+            "index_good_answer": 0
+        }, 
+        {
+            "question": "What is the farthest inner planet from the Sun?", 
+            "list_answers": [
+                "Mercury", 
+                "Venus", 
+                "Earth", 
+                "Mars"
+            ], 
+            "index_good_answer": 3
+        }, 
+        {
+            "question": "How many known moons does Jupiter have?", 
+            "list_answers": [
+                "50", 
+                "60", 
+                "70", 
+                "79"
+            ], 
+            "index_good_answer": 3
+        }, 
+        {
+            "question": "What is the name of the giant storm on Jupiter?", 
+            "list_answers": [
+                "The Great Red Spot", 
+                "The Great Blue Spot", 
+                "The Great Storm", 
+                "The Eye of Jupiter"
+            ], 
+            "index_good_answer": 0
+        }
+    ]
+}

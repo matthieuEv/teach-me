@@ -1,0 +1,5 @@
+openai>=1.51.2
+python-dotenv>=1.0.1
+-r https://raw.githubusercontent.com/nvidia-riva/python-clients/main/requirements.txt
+nvidia-riva-client
+requests
