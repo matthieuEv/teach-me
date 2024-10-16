@@ -49,12 +49,15 @@ def generate_educational_content(subject):
         you will response with the json, and only the json
         """
 
+        
         # Initialisation du client OpenAI
         client = OpenAI(
             base_url="https://integrate.api.nvidia.com/v1",
             api_key=os.getenv("OPENAI_API_KEY")
         )
+        print("client initialized ", client)
 
+        print("Generating educational content...")
         # Création de la requête avec le prompt modifié
         response = client.chat.completions.create(
             model="meta/llama-3.1-70b-instruct",
@@ -64,6 +67,8 @@ def generate_educational_content(subject):
             max_tokens=1024,
             stream=False
         )
+
+        print("Educational content generated!")
 
         # Récupération et affichage du résultat
         result = response.choices[0].message.content
