@@ -32,6 +32,11 @@ def generate_picture(prompt, index):
             base64_img = response_body["image"]
 
             current_path = os.getcwd()
+
+            data_dir = os.path.join(current_path, "data")
+            if not os.path.exists(data_dir):
+                os.makedirs(data_dir)
+
             output_path = os.path.join(current_path, "data", str(index) + ".jpg")
 
             save_base64_image_as_jpeg(base64_img, output_path)

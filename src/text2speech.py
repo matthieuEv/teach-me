@@ -7,6 +7,10 @@ load_dotenv()
 def generate_audio(prompt, prompt_index):
     current_path = os.getcwd()
 
+    data_dir = os.path.join(current_path, "data")
+    if not os.path.exists(data_dir):
+        os.makedirs(data_dir)
+
     output_path = os.path.join(current_path, "data", str(prompt_index)+".wav")
 
     os.system(
