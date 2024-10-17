@@ -4,4 +4,5 @@ python-dotenv>=1.0.1
 nvidia-riva-client
 requests
 ttkbootstrap
-ffpyplayer
+moviepy
+pydub
