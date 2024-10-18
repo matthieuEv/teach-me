@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="src/assets/logo.png" alt="Logo" width="80" height="80">
+</p>
+
 # Teach Me
 
 Ask your AI teacher to teach you anything, he will provide you with a video lecture on the topic and a quiz to test your knowledge!
