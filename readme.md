@@ -1,42 +1,34 @@
 # Teach Me
 
-Running on `python@3.12.7`
+Ask your AI teacher to teach you anything, he will provide you with a video lecture on the topic and a quiz to test your knowledge!
 
-```
-(Prompt) -> Script -> text-to-speetch -> audio-to-face
-                   -> text-to-image
-````
+## Example
 
-# Initial Prompt
 
-You are a teacher. Teach me about (...). You will make separated chapters, and return a response like this json. (...), there is a max of 3 chapters. In the end, you will have to make a QCM base on the json format. There is a max of 5 questions.
+## Installation
 
-## Script Json Format
+> The project was made and tested on `python@3.12.7`
+>
+> If you encounter any problems, try switching to this version.
 
-```json
-{
-    "script": {
-        "title_course": str,
-        "chapters": [
-            {
-                "title_chapter": str,
-                "content": str
-            },
-            ...
-        ]
-    },
-    "qcm": [
-        {
-            "question": str,
-            "list_answers": [str]
-            "index_good_answer": int,
-        }
-    ]
-}
+Creating a virtual environment is recommended.
+```bash
+python -m venv venv
+
+# Linux/Mac
+source venv/bin/activate
+
+# Windows
+venv\Scripts\activate
 ```
 
-## Description format
+Install the required packages
+```bash
+pip install -r requirements.txt
+```
 
-if needed, you can integrate picture in the content of the chapter by describing what you want in double square brackets.
+## Run "Teach Me"
 
-`exemple: [[a picture of a town in Kansas]]`
+```bash
+python src/main.py
+```
