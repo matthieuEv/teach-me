@@ -8,12 +8,6 @@
 
 Ask your AI teacher to teach you anything, he will provide you with a video lecture on the topic and a quiz to test your knowledge!
 
-## Full Example
-
-## Output video
-
-![Output Video](src/assets/output.mp4)
-
 ## Installation
 
 > The project was made and tested on `python@3.12.7`
