@@ -8,8 +8,11 @@
 
 Ask your AI teacher to teach you anything, he will provide you with a video lecture on the topic and a quiz to test your knowledge!
 
-## Example
+## Full Example
 
+## Output video
+
+![Output Video](src/assets/output.mp4)
 
 ## Installation
 
