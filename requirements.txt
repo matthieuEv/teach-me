@@ -6,3 +6,4 @@ requests
 ttkbootstrap
 moviepy
 pydub
+pytest
