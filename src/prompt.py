@@ -22,12 +22,15 @@ def generate_educational_content(subject):
 
         the introduction paragraph is the first paragraph of your course, it has to be very general, and very attractive, so the student will want to learn more about the subject, but also small, so the student will not be bored.
 
+        for the end paragraph, it has to be a conclusion of the course, and it has to be very general, and very attractive, so the student will want to learn more about the subject, but also realy small. At the end, talk about the test, and tell the student to do it.
+
         ## Script Json Format
 
         {{
         "script": {{
         "title_course": str,
         "introduction_paragraph": str,
+        "end_paragraph": str,
         "chapters": [
         {{
         "title_chapter": str,
@@ -49,7 +52,9 @@ def generate_educational_content(subject):
         in the chapters the images are a list of prompt you will give to illustrate your content. the prompt have to be very descriptif, it has to be very realistic, so do the prompt so.
         there could be multiple images for one chapter. in the image list, there must be only the string
 
-        you will response with the json, and only the json
+        you will response with the json, and only the json, whitout the ```json``` tag, and without the ```\n``` tag.
+
+        for the title_chapters, i want a simple namne, simply describing with 2-3 words. And i dont want "Chapter 1." or something like that at the start
         """
 
         # Initialisation du client OpenAI
@@ -71,11 +76,14 @@ def generate_educational_content(subject):
         result = response.choices[0].message.content
 
         if(verify_json_output(result[0])):
+            print("the result is valid")
             break
 
     end_time = time.time()
 
     execution_time = end_time - start_time
+
+    print("result: ",result,"\n\n")
 
     return {
         "json": json.loads(result),
@@ -94,6 +102,7 @@ def verify_json_output(output):
         "script": {
             "title_course": str,
             "introduction_paragraph": str,
+            "end_paragraph": str,
             "chapters": [
                 {
                     "title_chapter": str,
