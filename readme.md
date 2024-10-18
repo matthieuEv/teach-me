@@ -2,6 +2,8 @@
     <img src="src/assets/logo.png" alt="Logo" width="80" height="80">
 </p>
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/matthieuEv/teach-me/python_tests.yml?style=for-the-badge)
+
 # Teach Me
 
 Ask your AI teacher to teach you anything, he will provide you with a video lecture on the topic and a quiz to test your knowledge!
