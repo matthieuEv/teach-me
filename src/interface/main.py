@@ -2,6 +2,12 @@ import tkinter as tk
 from tkinter import Label, Radiobutton, IntVar
 from tkinter import ttk
 from tkinter.scrolledtext import ScrolledText
+import random
+
+spacing = 25
+color_white = '#D9D9D9'
+color_blue = '#414A6E'
+geometry = (300, 200)
 
 def center_window(root, width=300, height=200):
     # Obtenir la largeur et la hauteur de l'écran
@@ -15,13 +21,23 @@ def center_window(root, width=300, height=200):
     # Configurer la géométrie de la fenêtre
     root.geometry(f"{width}x{height}+{x}+{y}")
 
-def main(func):
+def window(func):
     def click_submit(prompt):
-        func()
         if prompt != "Teach me about...":
             print(prompt)
+
+            submit_button.config(state=tk.DISABLED)
+            submit_button.bind("<Enter>", lambda e: submit_button.config(cursor="watch"))
+            submit_button.bind("<Leave>", lambda e: submit_button.config(cursor="arrow"))
+            textarea.config(state=tk.DISABLED)
+            title_label.config(text="Processing...", fg=color_white)
+
+            result = func()
+            data = result["json"]["qcm"]
+            print(data)
+
             root.destroy()
-            show_second_window()
+            show_second_window(data)
 
     root = tk.Tk()
     root.geometry(f"{geometry[0]}x{geometry[1]}")
@@ -50,14 +66,12 @@ def main(func):
 
     root.mainloop()
 
-
 def show_second_window(data):
-
     qcm_window = tk.Tk()
-    qcm_window.geometry("400x400")
+    qcm_window.geometry("400x300")
     qcm_window.title("Questionnaire")
     qcm_window.configure(bg=color_blue)
-    center_window(qcm_window, 400, 400)
+    center_window(qcm_window, 400, 300)
 
     icon = tk.PhotoImage(file='src/assets/logo.png')
     qcm_window.iconphoto(False, icon)
@@ -67,24 +81,31 @@ def show_second_window(data):
     def create_question(index):
         if index < len(data):
             question_data = data[index]
-            
             for widget in qcm_window.winfo_children():
                 widget.destroy()
 
-            question_label = Label(qcm_window, text=question_data["question"], bg=color_blue, fg=color_white, font=("Helvetica", 14))
+            question_label = Label(qcm_window, text=question_data['question'], bg=color_blue, fg=color_white, font=("Helvetica", 14))
             question_label.pack(pady=(20, 10))
 
-            selected_option = IntVar(value=0)
+            # Randomiser les réponses et mettre à jour l'indice de la bonne réponse
+            answers = question_data['list_answers']
+            correct_answer = question_data['index_good_answer']
+            combined = list(enumerate(answers))
+            random.shuffle(combined)
+            randomized_indices, randomized_answers = zip(*combined)
+            new_correct_index = randomized_indices.index(correct_answer)
 
-            for text, value in question_data["options"]:
-                Radiobutton(qcm_window, text=text, variable=selected_option, value=value, bg=color_blue, fg=color_white, selectcolor=color_blue).pack(anchor=tk.W, padx=20)
+            selected_option = IntVar(value=-1)  # Ne sélectionne pas par défaut
+
+            for idx, answer in enumerate(randomized_answers):
+                Radiobutton(qcm_window, text=answer, variable=selected_option, value=idx, bg=color_blue, fg=color_white, selectcolor=color_blue).pack(anchor=tk.W, padx=20)
 
             result_label = Label(qcm_window, text="", bg=color_blue, fg=color_white, font=("Helvetica", 12))
             result_label.pack(pady=(10, 10))
 
             def submit_qcm():
                 selected = selected_option.get()
-                if selected == question_data["correct_answer"]:
+                if selected == new_correct_index:
                     result_label.config(text="Correct!")
                 else:
                     result_label.config(text="Try again.")
@@ -115,27 +136,21 @@ def show_second_window(data):
 
     create_question(current_question_index)
 
-
-spacing = 25
-color_white = '#D9D9D9'
-color_blue = '#414A6E'
-geometry = (300, 200)
-
 if __name__ == "__main__":
     def hello():
         print("Hello")
 
-    data = [
+    data= [
         {
-            "question": "What is the capital of France?",
-            "options": [("Paris", 1), ("London", 2), ("Berlin", 3), ("Madrid", 4)],
-            "correct_answer": 1
-        },
-        {
-            "question": "What is the largest planet in our solar system?",
-            "options": [("Mars", 1), ("Venus", 2), ("Jupiter", 3), ("Saturn", 4)],
-            "correct_answer": 3
-        }
+            'question': 'What is the largest planet in our solar system?', 
+            'list_answers': [
+                'Earth', 
+                'Saturn', 
+                'Jupiter', 
+                'Uranus'
+            ], 
+            'index_good_answer': 2
+        } 
     ]
 
-    main(hello, data)
+    window(hello, data)

@@ -2,6 +2,7 @@ from moviepy.editor import *
 from pydub import AudioSegment
 import os
 from PIL import Image, ImageDraw, ImageFont
+import subprocess
 
 # Taille des images après recadrage
 picture_size = (1344, 768)
@@ -176,7 +177,18 @@ def concat_videos(videos_path, output_path):
     # Exporter la vidéo finale
     final_clip.write_videofile(f"data/{output_path}.mp4", codec="libx264", audio_codec="aac")
 
+    open_video(f"data/{output_path}.mp4")
+
     return f"data/{output_path}.mp4"
+
+def open_video(file_path):
+    try:
+        if os.name == 'posix':  # macOS ou Linux
+            subprocess.run(['open', file_path], check=True)
+        elif os.name == 'nt':  # Windows
+            os.startfile(file_path)
+    except Exception as e:
+        print(f"Erreur lors de l'ouverture du fichier vidéo : {e}")
 
 if __name__ == "__main__":
     # generate_chapter_video("data/0.wav", ["data/0_0.jpg.jpg", "data/0_1.jpg.jpg", "data/0_2.jpg.jpg", "data/0_3.jpg.jpg"], 0)

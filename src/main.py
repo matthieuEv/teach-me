@@ -2,6 +2,8 @@ from prompt import generate_educational_content
 from text2speech import generate_audio
 from text2image import generate_picture
 from generate_video.main import generate_chapter_video, generate_title_picture, concat_videos, generate_title_video
+from interface.main import window
+
 import os
 from dotenv import load_dotenv
 import time
@@ -21,7 +23,7 @@ def delete_all_files_in_data_directory():
             except Exception as e:
                 print(f'Erreur lors de la suppression de {file_path}. Raison: {e}')
 
-if __name__ == "__main__":
+def run():
     start_time = time.time()
     delete_all_files_in_data_directory()
 
@@ -64,3 +66,9 @@ if __name__ == "__main__":
     end_time = time.time()
 
     print(f"Execution time: {int((end_time - start_time) // 60)} minutes and {int((end_time - start_time) % 60)} seconds")
+
+    return jsonOut
+
+if __name__ == "__main__":
+    delete_all_files_in_data_directory()
+    window(run)
