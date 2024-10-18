@@ -33,6 +33,26 @@ Install the required packages
 pip install -r requirements.txt
 ```
 
+You need to copy the `.env.template` file to `.env` and fill in the `NVIDIA_API_KEY` fields, you can get the `Nvidia` token from [here](https://build.nvidia.com/explore/discover).
+
+Also, don't forget to install the `ffmpeg` package on your system.
+
+```bash
+# test if ffmpeg is installed
+ffmpeg -version
+
+# if not installed
+
+# Linux
+sudo apt install ffmpeg
+
+# Mac
+brew install ffmpeg
+
+# Windows
+choco install ffmpeg
+```
+
 ## Run "Teach Me"
 
 ```bash
