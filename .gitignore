@@ -3,3 +3,4 @@ data/*
 .env
 __pycache__
 .ds_store
+src/assets/screen.mp4
