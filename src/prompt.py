@@ -6,7 +6,16 @@ import json
 
 # Charger les variables d'environnement
 
-def generate_educational_content(subject):
+def generate_educational_content(subject: str):
+    """Generate json content for an educational course based on a given subject.
+
+    Args:
+        subject (str): the subject of the course
+
+    Returns:
+        dict: the generated json content
+    """
+
     load_dotenv()
     nbr_errors = 0
 
@@ -16,7 +25,7 @@ def generate_educational_content(subject):
         print("Nb errors: ", nbr_errors)
         nbr_errors += 1
         start_time = time.time()
-        # Prompt initial basé sur le modèle de ton README, avec le sujet inséré
+
         initial_prompt = f"""
         You are a teacher. Teach me about {subject}. You will make separated chapters, and return a response like this json. There is a max of 3 chapters. In the end, you will have to make a QCM based on the class you gave using the json format i gave you. There is a max of 5 questions.
 
@@ -57,7 +66,7 @@ def generate_educational_content(subject):
         for the title_chapters, i want a simple namne, simply describing with 2-3 words. And i dont want "Chapter 1." or something like that at the start
         """
 
-        # Initialisation du client OpenAI
+        # OpenAI Client initialization
         client = OpenAI(
             base_url = "https://integrate.api.nvidia.com/v1",
             api_key = os.getenv("NVIDIA_API_KEY")
@@ -72,7 +81,7 @@ def generate_educational_content(subject):
             stream=False
         )
 
-        # Récupération et affichage du résultat
+        # Get the result
         result = response.choices[0].message.content
 
         if(verify_json_output(result[0])):
@@ -90,7 +99,15 @@ def generate_educational_content(subject):
         "exec": execution_time
     }
 
-def verify_json_output(output):
+def verify_json_output(output: str) -> tuple[bool,str]:
+    """Verify that the output is a valid JSON response.
+
+    Args:
+        output (str): the output to verify
+
+    Returns:
+        tuple[bool,str]: a tuple containing a boolean indicating if the output is valid and the error message
+    """
     try:
         # Parse the output as JSON
         data = json.loads(output)
@@ -120,8 +137,17 @@ def verify_json_output(output):
         ]
     }
 
-    # Helper function to check if a value matches the expected type or structure
-    def matches_structure(expected, actual, path="root"):
+    def matches_structure(expected: dict, actual: dict, path="root") -> tuple[bool,str]:
+        """Helper function to check if a value matches the expected type or structure
+
+        Args:
+            expected (dict): the expected structure
+            actual (dict): the actual value to check
+            path (str, optional): Defaults to "root", the path to the current value
+
+        Returns:
+            tuple[bool,str]: a tuple containing a boolean indicating if the value matches the expected structure and the error message
+        """
         if isinstance(expected, dict):
             if not isinstance(actual, dict):
                 return False, f"Expected a dictionary at {path}, got {type(actual).__name__}"

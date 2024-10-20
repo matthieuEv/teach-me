@@ -65,3 +65,7 @@ choco install ffmpeg
 ```bash
 python src/main.py
 ```
+
+## Credits
+
+- Nvidia Riva : [Nvidia Riva](https://github.com/nvidia-riva/python-clients)

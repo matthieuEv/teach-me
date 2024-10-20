@@ -11,6 +11,8 @@ import time
 load_dotenv()
 
 def delete_all_files_in_data_directory():
+    """Deletes all files in the data directory.
+    """
     data_dir = os.path.join(os.getcwd(), 'data')
     if os.path.exists(data_dir):
         data_directory = os.path.join(os.getcwd(), 'data')
@@ -27,13 +29,16 @@ def run():
     start_time = time.time()
     delete_all_files_in_data_directory()
 
-    # prompt = input("Teach me about ")
-    prompt = "the solar system"
+    prompt = input("Teach me about ")
     jsonOut = generate_educational_content(prompt)
 
     count_chapters = len(jsonOut["json"]["script"]["chapters"])
+
+    # Generate the audio for the introduction and end paragraphs
     generate_audio(jsonOut["json"]["script"]["introduction_paragraph"],0)
     generate_audio(jsonOut["json"]["script"]["end_paragraph"],count_chapters+1)
+
+    # Generate the audio for the chapters and images
     for chapter_index, chapter in enumerate(jsonOut["json"]["script"]["chapters"]):
         print("\n"+str(chapter_index+1)+" - "+chapter["content"]+"\n")
         generate_audio(chapter["content"],chapter_index+1)
@@ -49,10 +54,10 @@ def run():
     print("title_video_path: ",title_video_path)
 
     for chapter_index, chapter in enumerate(jsonOut["json"]["script"]["chapters"]):
-        title_video = generate_title_video(chapter["title_chapter"],chapter_index+1,font_size=80)
+        generate_title_video(chapter["title_chapter"],chapter_index+1,font_size=80)
 
         images_path = [f"data/{chapter_index+1}_{i}.jpg" for i in range(len(chapter["images"]))]
-        chapter_video = generate_chapter_video(f"data/{chapter_index+1}.wav",images_path,chapter_index+1)
+        generate_chapter_video(f"data/{chapter_index+1}.wav",images_path,chapter_index+1)
 
     end_picture_path = generate_title_picture("The END",count_chapters+1,font_size=100)
     end_video_path = generate_chapter_video(f"data/{count_chapters+1}.wav",[end_picture_path],count_chapters+1)
