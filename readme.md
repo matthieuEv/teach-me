@@ -8,6 +8,16 @@
 
 Ask your AI teacher to teach you anything, he will provide you with a video lecture on the topic and a quiz to test your knowledge!
 
+## Examples
+
+![ask_question](src/assets/ask_question.png)
+
+And than, 5 minutes later...
+
+![quizz_and_video.png](src/assets/quizz_and_video.png)
+
+> The video is a lecture on the topic you asked for, and the quiz is to test your knowledge.
+
 ## Installation
 
 > The project was made and tested on `python@3.12.7`
