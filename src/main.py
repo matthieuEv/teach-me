@@ -25,11 +25,10 @@ def delete_all_files_in_data_directory():
             except Exception as e:
                 print(f'Erreur lors de la suppression de {file_path}. Raison: {e}')
 
-def run():
+def run(prompt: str):
     start_time = time.time()
     delete_all_files_in_data_directory()
 
-    prompt = input("Teach me about ")
     jsonOut = generate_educational_content(prompt)
 
     count_chapters = len(jsonOut["json"]["script"]["chapters"])

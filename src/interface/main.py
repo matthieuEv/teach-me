@@ -32,7 +32,7 @@ def window(func):
             textarea.config(state=tk.DISABLED)
             title_label.config(text="Processing...", fg=color_white)
 
-            result = func()
+            result = func(prompt)
             data = result["json"]["qcm"]
             print(data)
 
@@ -69,7 +69,7 @@ def window(func):
 def show_second_window(data):
     qcm_window = tk.Tk()
     qcm_window.geometry("400x300")
-    qcm_window.title("Questionnaire")
+    qcm_window.title("Quizz")
     qcm_window.configure(bg=color_blue)
     center_window(qcm_window, 400, 300)
 

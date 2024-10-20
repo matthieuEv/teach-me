@@ -19,7 +19,10 @@ def generate_educational_content(subject: str):
     load_dotenv()
     nbr_errors = 0
 
+    print("subject: ", subject)
+
     print("Using model: ", os.getenv("LLAMA_MODEL"))
+    print("Token: ", os.getenv("NVIDIA_API_KEY"))
 
     while nbr_errors < 3:
         print("Nb errors: ", nbr_errors)
@@ -179,9 +182,9 @@ def verify_json_output(output: str) -> tuple[bool,str]:
 
 if __name__ == "__main__":
     # Exemple d'utilisation
-    # subject = "the Solar System"
+    subject = "the Solar System"
 
-    # result = generate_educational_content(subject)
-    # print(result.json)
-    f = open("example.json", "r")
-    print(verify_json_output(f.read()))
+    result = generate_educational_content(subject)
+    print(result["json"])
+    # f = open("example.json", "r")
+    # print(verify_json_output(f.read()))
